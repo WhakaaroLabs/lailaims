@@ -4,7 +4,7 @@
       placeholder="Ask them anything"
       v-model="prompt"
       class="w-full p-4 border-0 rounded focus:outline-none bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
-      @keyup.enter="sendPrompt"
+      @keydown.enter.prevent="handleEnter"
     />
 
     <button class="absolute right-4 top-0 bottom-0 my-auto text-gray-400 hover:text-blue-500 dark:hover:text-blue-400" @click="sendPrompt">
@@ -31,6 +31,14 @@ import { useLLMStore } from '@/stores/llms'
 const llmsStore = useLLMStore()
 
 const prompt = ref('')
+
+function handleEnter(e: KeyboardEvent) {
+  if (e.shiftKey ) {
+    prompt.value += '\n'
+  } else {
+    sendPrompt()
+  }
+}
 
 function sendPrompt() {
   llmsStore.addPrompt(prompt.value)

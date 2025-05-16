@@ -39,7 +39,7 @@
                 v-if="message.type === 'user'"
                 class="flex items-center justify-end"
               >
-                <span class="px-4 py-2 ml-14 bg-blue-100 rounded-xl text-gray-600">{{ message.content }}</span>
+                <span class="px-4 py-2 ml-14 bg-blue-100 rounded-xl text-gray-600 whitespace-pre-wrap">{{ message.content }}</span>
               </div>
               <div
                 v-else-if="message.type === 'llm' && message.llmId === llmId"

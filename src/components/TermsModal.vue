@@ -164,6 +164,27 @@
               </ul>
             </section>
 
+            <section class="mb-6">
+              <h2 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">14. Open Source</h2>
+              <p>Lailaims is an open source project:</p>
+              <ul class="list-disc pl-6">
+                <li>source code is available under the MIT License</li>
+                <li>contributions are welcome through GitHub</li>
+                <li>you may use, modify, and distribute the code in accordance with the license</li>
+                <li>no warranty is provided for the open source software</li>
+              </ul>
+            </section>
+
+            <section class="mb-6">
+              <h2 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">15. Contributions</h2>
+              <p>By contributing to the project, you:</p>
+              <ul class="list-disc pl-6">
+                <li>agree to license your contributions under the MIT License</li>
+                <li>warrant that you have the right to make such contributions</li>
+                <li>acknowledge that your contributions may be modified or removed</li>
+              </ul>
+            </section>
+
             <p class="font-medium mt-8">
               By using this service, you acknowledge you have read, understood, and agree to be bound by these terms.
             </p>

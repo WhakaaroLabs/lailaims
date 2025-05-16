@@ -26,7 +26,6 @@
 
       <div class="hidden md:block w-full text-gray-500 dark:text-gray-200 text-xs font-light">
         An open source client-side web application for testing multiple LLM providers simultaneously.<br>
-        <!-- Your data stays private. <b class="font-medium">We do not store anything, and everything runs in your browser!</b> -->
       </div>
     </div>
 
