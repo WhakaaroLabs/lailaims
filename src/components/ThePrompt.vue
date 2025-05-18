@@ -22,15 +22,17 @@
       </svg>
     </button>
   </div>
+  <Toast ref="toastRef" />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useLLMStore } from '@/stores/llms'
+import Toast from './Toast.vue'
 
 const llmsStore = useLLMStore()
-
 const prompt = ref('')
+const toastRef = ref<InstanceType<typeof Toast> | null>(null)
 
 function handleEnter(e: KeyboardEvent) {
   if (e.shiftKey ) {
@@ -41,6 +43,14 @@ function handleEnter(e: KeyboardEvent) {
 }
 
 function sendPrompt() {
+  if (!prompt.value.trim()) return
+
+
+  if (!llmsStore.hasAtLeastOneApiKey()) {
+    toastRef.value?.show('To use Lailaims, you need to set at least one API key before sending a prompt.')
+    return
+  }
+
   llmsStore.addPrompt(prompt.value)
   prompt.value = ''
 }

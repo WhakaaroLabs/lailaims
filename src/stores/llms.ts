@@ -218,6 +218,11 @@ export const useLLMStore = defineStore('llms', () => {
     return savedApiKeys.value[llmId] !== ''
   }
 
+  function hasAtLeastOneApiKey() {
+    return Object.keys(llms.value).some(llmId => hasApiKey(llmId))
+
+  }
+
   async function saveApiKey({ llmId, key }: { llmId: string, key: string }) {
     if (key) {
       localStorage.setItem(`${LOCAL_STORAGE_API_KEY}${llmId}`, key)
@@ -280,6 +285,7 @@ export const useLLMStore = defineStore('llms', () => {
     lastPrompts,
     // functions
     hasApiKey,
+    hasAtLeastOneApiKey,
     saveApiKey,
     deleteApiKey,
     addPrompt,
